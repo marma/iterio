@@ -30,8 +30,8 @@ def open(it, mode='r', auth=None, buffering=-1, encoding=None):
 
 class IterIO(RawIOBase):
     def __init__(self, i):
-        self.it = i
-        self.current = next(i)
+        self.it = iter(i)
+        self.current = next(self.it)
         self.n = 0
 
     
